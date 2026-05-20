@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11110f">
+    <meta
+      name="description"
+      content="Official project page for mod-sons-of-the-forest by Keven / kevenbypass."
+    >
+    <title>mod-sons-of-the-forest | Keven</title>
+    <link rel="preload" href="assets/mod-sons-of-the-forest.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="mod-sons-of-the-forest home">
+        <span class="brand-mark">K</span>
+        <span>kevenbypass</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#identity">Identity</a>
+        <a href="#build">Build Proof</a>
+        <a href="#repo">Repository</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/mod-sons-of-the-forest.png"
+          alt="In-game overlay screenshot of mod-sons-of-the-forest"
+        >
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Official project page</p>
+          <h1 id="hero-title">mod-sons-of-the-forest</h1>
+          <p class="hero-copy">
+            Authored and maintained by Keven / kevenbypass, with build identity
+            embedded into the Windows DLL and injector artifacts.
+          </p>
+          <div class="hero-actions" aria-label="Primary links">
+            <a class="button primary" href="https://github.com/kevenbypass/mod-sons-of-the-forest-site">Open GitHub</a>
+            <a class="button secondary" href="#build">Verify Build</a>
+          </div>
+          <dl class="hero-facts">
+            <div>
+              <dt>Author</dt>
+              <dd>Keven / kevenbypass</dd>
+            </div>
+            <div>
+              <dt>Product</dt>
+              <dd>mod-sons-of-the-forest</dd>
+            </div>
+            <div>
+              <dt>Platform</dt>
+              <dd>Windows x64</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="identity" class="section identity-section" aria-labelledby="identity-title">
+        <div class="section-heading">
+          <p class="eyebrow">Identity</p>
+          <h2 id="identity-title">Attribution That Ships With The Build</h2>
+        </div>
+        <div class="identity-grid">
+          <article class="identity-card">
+            <span class="card-kicker">01</span>
+            <h3>Source Owner</h3>
+            <p>
+              The public proof page is published under the GitHub account
+              <strong>kevenbypass</strong>.
+            </p>
+          </article>
+          <article class="identity-card">
+            <span class="card-kicker">02</span>
+            <h3>Binary Metadata</h3>
+            <p>
+              Release builds include Windows version fields for product,
+              company, file description, version, and copyright.
+            </p>
+          </article>
+          <article class="identity-card">
+            <span class="card-kicker">03</span>
+            <h3>Runtime Mark</h3>
+            <p>
+              The menu, injector banner, and DLL log identify the build as
+              authored by Keven / kevenbypass.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="build" class="section build-section" aria-labelledby="build-title">
+        <div class="section-heading">
+          <p class="eyebrow">Build Proof</p>
+          <h2 id="build-title">Fields To Check After Compiling</h2>
+        </div>
+        <div class="proof-layout">
+          <div class="proof-panel">
+            <h3>Expected Windows metadata</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <th scope="row">CompanyName</th>
+                  <td>kevenbypass</td>
+                </tr>
+                <tr>
+                  <th scope="row">ProductName</th>
+                  <td>mod-sons-of-the-forest</td>
+                </tr>
+                <tr>
+                  <th scope="row">LegalCopyright</th>
+                  <td>Copyright (c) 2026 Keven. All rights reserved.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Author label</th>
+                  <td>Keven / kevenbypass</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="command-panel" aria-label="Verification commands">
+            <pre><code>$internal = ".\build\Release\SOTF_Internal.dll"
+$injector = ".\injector\build\Release\SOTF_Inject.exe"
+
+(Get-Item $internal).VersionInfo
+(Get-Item $injector).VersionInfo
+
+Get-FileHash $internal -Algorithm SHA256
+Get-FileHash $injector -Algorithm SHA256</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="repo" class="section repo-section" aria-labelledby="repo-title">
+        <div class="repo-band">
+          <div>
+            <p class="eyebrow">Repository</p>
+            <h2 id="repo-title">Canonical Source</h2>
+            <p>
+              Commits, Pages deployment history, and published hashes create a
+              public trail for authorship without exposing the private project
+              source code.
+            </p>
+          </div>
+          <a class="button primary" href="https://github.com/kevenbypass/mod-sons-of-the-forest-site">github.com/kevenbypass/mod-sons-of-the-forest-site</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Copyright (c) 2026 Keven.</span>
+      <span>Published from kevenbypass/mod-sons-of-the-forest-site.</span>
+    </footer>
+  </body>
+</html>
